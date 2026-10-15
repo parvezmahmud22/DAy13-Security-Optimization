@@ -1,0 +1,7 @@
+FROM python:latest
+ENV API_TOKEN=abc123-super-secret
+RUN apt-get update && apt-get install -y build-essential git curl vim
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+CMD python app.py
